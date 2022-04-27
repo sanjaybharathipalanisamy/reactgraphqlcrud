@@ -1,0 +1,29 @@
+.input-component {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1rem;
+  label {
+    text-transform: capitalize;
+    margin-bottom: 4px;
+  }
+  input {
+    height: 40px;
+    border: 1px solid gray;
+    background-color: transparent;
+    padding: 0 1rem;
+    margin-bottom: 4px;
+    border-radius: 4px;
+    
+    &:focus-visible {
+      outline: none;
+    }
+  }
+  .error-message {
+    color: red;
+  }
+  &.error {
+    input {
+      border: 1px solid red;
+    }
+  }
+}
