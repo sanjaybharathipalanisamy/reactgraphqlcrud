@@ -15,6 +15,7 @@ import checkValidations, {
 } from "../../utils/validator";
 import { connect } from "react-redux";
 import userDataAction from "../../redux/user/actions";
+import ShowCount from "../showCount";
 
 const StudentTable = (props) => {
   const { loading, data, refetch: userDataRefetch } = useQuery(LOAD_USERS);
@@ -200,10 +201,16 @@ const StudentTable = (props) => {
     <div className="student-table-container">
       <div className="table-header">
         <h1>Student Data</h1>
-        <Button type="primary" onClick={showModal}>
+        {/* <Button type="primary" data-testid='add-new-button' onClick={showModal}>
           + Add New
-        </Button>
+        </Button> */}
+        <button data-testid='add-new-button' className="ant-btn ant-btn-primary" onClick={showModal}>
+          + Add New
+        </button>
       </div>
+      <ShowCount
+        count={!!userData && userData.length ? userData.length : 0}
+      />
       <Modal
         title="Add student"
         visible={CreateModalPopup}

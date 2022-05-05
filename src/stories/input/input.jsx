@@ -18,6 +18,7 @@ const Input = ({
     <div className={`input-component ${!!error ? " error" : ""}`}>
       {!!label ? <label>{label}</label> : <></>}
       <input
+        data-testid="input-element"
         placeholder={placeholder}
         onChange={onChange}
         name={name}
